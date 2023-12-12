@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/contador.css';
 
 function Contador( { puntos, esLocal }) {
   return (
