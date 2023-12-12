@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/longTime.css';
 
 function LongTime ({ tiempoLargo }) {
   return (

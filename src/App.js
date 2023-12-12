@@ -14,36 +14,41 @@ function App() {
             tiempoLargo = '00:00:00'
           />
         </div>
-        <div className='local'>
-          <h2>LOCAL</h2>
-          <Contador 
+        <div className='marcadores'>
+          <div className='local'>
+            <h2>LOCAL</h2>
+            <Contador 
               puntos = "0"
               esLocal={true}
-          />
+            />
 
-          <Boton 
-            texto="+"
-          />
-          <Boton 
-            texto="-"/>
-        </div>
-        <div className='shorTime'>
-          <ShortTime
-            tiempoCorto= '00'
-          />
-        </div>
-        <div className='visita'>
-          <h2>VISITA</h2>
-          <Contador 
-              puntos = "0"
-              esLocal={false}
-          />
-  
-          <Boton 
-            texto="+"
-          />
-          <Boton 
-            texto="-"/>
+            <div className='botonesLocal'>
+              <Boton 
+                texto="+"
+              />
+              <Boton 
+                texto="-"/>
+            </div>
+          </div>
+          <div className='shortTime'>
+            <ShortTime
+              tiempoCorto= '00'
+            />
+          </div>
+          <div className='visita'>
+            <h2>VISITA</h2>
+            <Contador 
+                puntos = "0"
+                esLocal={false}
+            />
+            <div className='botonesVisita'>
+              <Boton 
+                texto="+"
+              />
+              <Boton 
+                texto="-"/>
+            </div>
+          </div>
         </div>
 
       </div>
