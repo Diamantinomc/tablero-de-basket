@@ -4,7 +4,12 @@
     background-color: white;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 5vw;
+    font-size: 90px;
+}
+
+h2 {
+    font-size: 40px;
 }
 
 

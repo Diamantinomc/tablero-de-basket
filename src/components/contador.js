@@ -1,10 +1,11 @@
 import React from "react";
 import '../css/contador.css';
 
-function Contador( { puntos, esLocal }) {
+function Contador( { puntosLocal, puntosVisita, esLocal }) {
   return (
     <div className={esLocal ? "puntosLocal": "puntosVisita"}>
-      {puntos}
+      {puntosLocal}
+      {puntosVisita}
     </div>
 
   );
