@@ -19,3 +19,10 @@ button {
     padding: 20px;
   }
 
+  .increase {
+    background-color: green;
+  }
+
+  .decrease {
+    background-color: red;
+  }

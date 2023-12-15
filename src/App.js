@@ -9,6 +9,7 @@ function App() {
 
   const [puntosLocal, setPuntosLocal] = useState(0);
   const [puntosVisita, setPuntosVisita] =useState(0);
+  const [disable, setDisable] = useState(false);
 
   const handleClic = () => {
     setPuntosLocal(puntosLocal+1);
@@ -19,12 +20,22 @@ function App() {
   };
 
   const bajarPuntos = () => {
+    if(puntosLocal === 0){
+      setDisable(disable===true);
+    } else {
     setPuntosLocal(puntosLocal-1);
+    }
   };
 
   const bajarPuntos2 = () => {
+    if(puntosLocal === 0){
+      setDisable(disable===true)
+    }else {
     setPuntosVisita(puntosVisita-1);
+  }
   };
+
+  
 
   return (
     <div className="App">
@@ -44,15 +55,16 @@ function App() {
             />
 
             <div className='botonesLocal'>
-              <Boton
+              <Boton className = 'localAumentar'
                 texto="+"
                 increase={true}
                 handleClic={handleClic}
               />
-              <Boton 
+              <Boton
                 texto="-"
                 increase={false}
-                handleClic={bajarPuntos}/>
+                handleClic={bajarPuntos}
+                />
             </div>
           </div>
           <div className='shortTime'>
