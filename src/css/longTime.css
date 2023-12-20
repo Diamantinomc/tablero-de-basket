@@ -1,4 +1,13 @@
+
+body {
+    margin: 0px;
+    padding: 100px;
+}
+
+
 .longTime {
-    font-size: 150px;
+    text-align: center;
+    text-shadow: 3px 1px grey;
+    font-size: 50px;
     color: green;
 }
