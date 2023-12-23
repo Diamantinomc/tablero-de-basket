@@ -5,44 +5,42 @@ import Boton from './components/Boton';
 
 function App() {
 
-  const [min, setMin] = useState(10);
-  const [seg, setSeg] = useState(0);
-  const [dec, setDec] = useState(0);
+  const [time, setTime] = useState({min:10, seg:0, mil:0});
+  const [intervalo, setIntervalo] = useState();
   
+  const Start = () => {
+    run();
+    setIntervalo(setInterval(run, 10));
+  };
+
+  var min = time.min;
+  var seg = time.seg;
+  var mil = time.mil;
+
+  const run = () => {
+    if(seg === 0) {
+      min--;
+      seg = 60;
+    }
+
+    if(mil === 0) {
+      seg--;
+      mil = 100;
+    }
   
-  var timer;
-  const Start = (() => {
-
-    timer = setInterval(() => {
-      setDec(dec-1);
-
-      if(dec===0) {
-        setSeg(seg-1);
-        setDec(9);
-
-        if(seg===0) {
-          setMin(min-1);
-          setSeg(59);
-        }
-      }
-    }, 100)
-
-    return () => clearInterval(timer);
-  });
-
-  const Stop = () => {
-    clearInterval(timer);
+    mil--;
+    return setTime({ min:min, seg:seg, mil:mil })
   }
 
-  
+  const Stop = () => {
+    clearInterval(intervalo);
+  }
 
   return (
     <div className='principal'>
       <div className='Cronometro'>
         <Cronometro
-          min = {min<10? '0'+ min : min}
-          seg = {seg<10? '0'+ seg : seg}
-          dec = {dec <10? '0' + dec : dec}
+          time = {time}
         />
       </div>
       <div className='Start'>
@@ -61,7 +59,6 @@ function App() {
     </div>
     
 
-  );
-};
-
+    );
+  };
 export default App;
