@@ -2,13 +2,19 @@ import './App.css';
 import Cronometro from './components/Cronometro';
 import Boton from './components/Boton';
 import Marcador from './components/Marcador';
+import { useState } from 'react';
 
 function App() {
+
+  const [time, setTime] = useState({min:0, seg:0, mil:0})
 
   return (
     <div className='principal'>
       <div className='tiempo'>
-        <Cronometro />
+        <Cronometro 
+        time = {time}/>
+      </div>
+      <div className='Inicio-pausa'>
         <Boton 
           texto="Start"
           isStart={true}

@@ -1,10 +1,12 @@
 import React from "react";
 
-function Cronometro( ) {
+function Cronometro({ time }) {
     return(
         <div className="crPrincipal">
             <div className="cronometro">
-                <h1>00:00:00</h1>
+            {time.min >= 10 ? time.min : '0'+ time.min}:
+            {time.seg >= 10 ? time.seg : '0'+ time.seg}:
+            {time.mil >= 10 ? time.mil : '0'+ time.mil}
             </div>
         </div>
     )

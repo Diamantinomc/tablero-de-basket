@@ -6,6 +6,9 @@ function Boton({ texto, isStart, ManejarClic}) {
             <button className={ isStart ? "start" : "restart"}>
                 {texto}
             </button>
+            <button className="stop">
+                {texto}
+            </button>
         </div>
     )
 }
