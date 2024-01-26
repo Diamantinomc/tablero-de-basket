@@ -6,7 +6,29 @@ import { useState } from 'react';
 
 function App() {
 
-  const [time, setTime] = useState({min:0, seg:0, mil:0})
+  const [time, setTime] = useState({min:10, seg:0, cen:0})
+
+  const start = () => {
+    run();
+    setInterval(run, 10);
+  }
+
+  var ActualizarMin = time.min
+  var ActualizarSeg = time.seg
+  var ActualizarCen = time.cen
+
+  const run = () => {
+    if(ActualizarSeg === 0){
+      ActualizarMin--;
+      ActualizarSeg = 60;
+    }
+    if(ActualizarCen === 0){
+      ActualizarSeg--;
+      ActualizarCen = 100;
+    }
+    ActualizarCen--;
+    return setTime({min:ActualizarMin, seg:ActualizarSeg, cen:ActualizarCen})
+  }
 
   return (
     <div className='principal'>
@@ -18,7 +40,7 @@ function App() {
         <Boton 
           texto="Start"
           isStart={true}
-          ManejarClic="prueba"
+          ManejarClic={start}
         />
 
         <Boton 
